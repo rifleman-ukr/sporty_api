@@ -1,5 +1,5 @@
-from os import path
 import json
+from os import path
 
 
 def schema(template_name):

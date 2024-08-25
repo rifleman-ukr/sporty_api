@@ -1,5 +1,6 @@
-from endpoints.get_object import GetFact
 from pytest import fixture
+
+from endpoints.get_object import GetFact
 
 
 @fixture(scope='function')

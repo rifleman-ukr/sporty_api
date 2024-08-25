@@ -1,6 +1,7 @@
 import requests
-from utils import schema
 from jsonschema import validate, ValidationError
+
+from utils import schema
 
 
 class GetFact:

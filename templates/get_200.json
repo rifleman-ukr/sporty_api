@@ -19,7 +19,7 @@
       "type": "string"
     },
     "user": {
-      "type": "string"
+      "type": ["string", "object"]
     },
     "text": {
       "type": "string"

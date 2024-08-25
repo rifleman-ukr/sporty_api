@@ -4,10 +4,12 @@ from jsonschema import validate, ValidationError
 
 
 class GetFact:
-    def __init__(self, request=None, desired_status=200):
+    def __init__(self, request, desired_status):
+        self.desired_status = desired_status
         self.response = requests.get(f"https://cat-fact.herokuapp.com/facts/{request}")
-        self.is_response_valid()
-        self.is_request_succeeded(desired_status)
+
+    def result(self):
+        return True if self.is_response_valid() and self.is_request_succeeded(self.desired_status) else False
 
     @property
     def response_status(self):
@@ -19,7 +21,11 @@ class GetFact:
 
     def is_response_valid(self):
         try:
-            validate(instance=self.response_json, schema=schema('get'))
+            if isinstance(self.response_json, list):
+                for _ in self.response_json:
+                    validate(instance=self.response_json, schema=schema(f'get_{self.desired_status}'))
+            else:
+                validate(instance=self.response_json, schema=schema(f'get_{self.desired_status}'))
         except ValidationError:
             return False
         else:

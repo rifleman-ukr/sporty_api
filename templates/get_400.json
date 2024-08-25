@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "stringValue": {
+      "type": "string"
+    },
+    "valueType": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "stringValue",
+    "valueType",
+    "kind",
+    "value",
+    "path",
+    "reason",
+    "name",
+    "message"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "properties": {
+    "status": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "type": ["boolean", "null"]
+        },
+        "sentCount": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "verified",
+        "sentCount"
+      ]
+    },
+    "_id": {
+      "type": "string"
+    },
+    "user": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "deleted": {
+      "type": "boolean"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "__v": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "status",
+    "_id",
+    "user",
+    "text",
+    "type",
+    "deleted",
+    "createdAt",
+    "updatedAt",
+    "__v"
+  ]
+}
